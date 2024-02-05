@@ -10,14 +10,13 @@ import {
 
 import SignUpFrom from "../../components/sign-up-form/sign-up-form.component";
 const SignIn = () => {
-
   // useEffect(async () => {
   //   const response = await getRedirectResult(auth);
   //   if(response){
-  //     const userDocRef = await creeatUserDocumentFromAuth(response.user);  
+  //     const userDocRef = await creeatUserDocumentFromAuth(response.user);
   //   }
   // },[]);
-  
+
   // nothing gets logged cuz webPage unmounts and forgets everything
   // const logGoogleRedirectUser = async () => {
   //   const { user } = await signInWithGoogleRedirect();
@@ -32,7 +31,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <button onClick={logGoogleUseer}>Sign In with Google</button>
+      <button onClick={logGoogleUseer}>Sign In with Google PopUp</button>
       {/* <button onClick={signInWithGoogleRedirect}>Sign In with Google Redirect</button> */}
       <SignUpFrom />
     </div>

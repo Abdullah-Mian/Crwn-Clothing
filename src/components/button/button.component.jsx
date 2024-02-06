@@ -3,7 +3,6 @@ import "./button.styles.scss";
 const BUTTON_TYPES_CLASSES = {
     google: 'google-sign-in',
     inverted: 'inverted',
-    custom: 'custom-button'
 }
 
 const Button = ({childern , buttonType,  ...otherProps}) =>{

@@ -8,8 +8,10 @@ import {
   creeatUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
+import Button from "../../components/button/button.component";
 import SignUpFrom from "../../components/sign-up-form/sign-up-form.component";
-const SignIn = () => {
+import SignInFrom from "../../components/sign-in-form/sign-in-form.component";
+const Authentication = () => {
   // useEffect(async () => {
   //   const response = await getRedirectResult(auth);
   //   if(response){
@@ -22,19 +24,14 @@ const SignIn = () => {
   //   const { user } = await signInWithGoogleRedirect();
   //   console.log({ user });
 
-  const logGoogleUseer = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await creeatUserDocumentFromAuth(user);
-  };
-
   // }
 
   return (
     <div>
-      <button onClick={logGoogleUseer}>Sign In with Google PopUp</button>
-      {/* <button onClick={signInWithGoogleRedirect}>Sign In with Google Redirect</button> */}
+      <SignInFrom />
       <SignUpFrom />
+      {/* <button onClick={signInWithGoogleRedirect}>Sign In with Google Redirect</button> */}
     </div>
   );
 };
-export default SignIn;
+export default Authentication;

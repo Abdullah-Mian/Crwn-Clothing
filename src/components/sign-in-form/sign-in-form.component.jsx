@@ -27,14 +27,17 @@ const SignInFrom = () => {
     e.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(email, password);
+      const response = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
       console.log({ response });
       setFormFields(defaultFormfields); // clear form fields
     } catch (err) {
-      if (err.code === "auth/email-already-in-use") {
-        alert("Email already in use");
+      if (err.code === "auth/invalid-credential") {
+        alert("Invalid Email or Password");
       } else {
-        console.error(err);
+        console.log("Error signing in", err);
       }
     }
   };
@@ -67,9 +70,12 @@ const SignInFrom = () => {
           value={password}
         />
         <div className="buttons-container">
-
           <Button type="submit">Sign In</Button>
-          <Button buttonType={"google"} onClick={signInWithGoogle}>
+          <Button
+            type="button"
+            buttonType={"google"}
+            onClick={signInWithGoogle}
+          >
             Google Sign In
           </Button>
         </div>

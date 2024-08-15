@@ -9,14 +9,14 @@ import "./cart-dropdown.styles.scss"
 const CartDropdown = () =>{
     const { CartItems } = useContext(CartContext);
     return(
-        <div className="cart-dropdown-container">
+      <div className="cart-dropdown-container">
       <div className="cart-items">
         {CartItems.map((cartItem) => (
           <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </div>
       <Link to="/checkout" className="checkout-button">
-        <BUTTON>GO TO CHECKOUT</BUTTON>
+        <BUTTON className = "btn">GO TO CHECKOUT</BUTTON>
       </Link>
     </div>
     )
